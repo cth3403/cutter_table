@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Classification Cutter Number Tool</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Library Classification Cutter Number Tool</h1>
+        <p>
+          Automated cutter number generation following standard LC
+          classification workflow
+        </p>
+      </div>
+
+      <div class="main-content">
+        <div class="workflow-section">
+          <h2>⚠️ Before Using This Tool</h2>
+          <div class="exclusion-warnings">
+            <div class="warning-card critical">
+              <h3>❌ Motion Picture DVDs / Popular Film/TV Boxsets</h3>
+              <p>DO NOT CLASSIFY - Pass to CS Team</p>
+            </div>
+            <div class="warning-card">
+              <h3>✅ Literature Books (Class starts with 'P')</h3>
+              <p>Use the Literature-Specific Workflow option in this tool</p>
+            </div>
+            <div class="warning-card">
+              <h3>✅ Non-Literary Autobiographies</h3>
+              <p>
+                Use the Literature-Specific Workflow option in this tool for
+                autobiographical works
+              </p>
+            </div>
+            <div class="warning-card">
+              <h3>✅ Standard Classification Items</h3>
+              <p>
+                Proceed with this tool for non-literature items requiring
+                standard classification
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-section">
+          <h2>Generate Cutter Number</h2>
+          <form class="search-form" id="cutterForm">
+            <div class="form-group">
+              <label for="itemType">Item Type:</label>
+              <select id="itemType" name="itemType" required>
+                <option value="">Select item type...</option>
+                <option value="standard">
+                  Non-Literature Item (Standard Classification)
+                </option>
+                <option value="literature-p">
+                  Literature Book (Class starts with 'P')
+                </option>
+                <option value="autobiography">
+                  Non-Literary Autobiography
+                </option>
+                <option value="motion-picture">
+                  Motion Picture DVD/Popular Film/TV Boxset
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group" id="authorGroup" style="display: none">
+              <label for="authorName"
+                >Author's Surname (First Author/Editor):</label
+              >
+              <input
+                type="text"
+                id="authorName"
+                name="authorName"
+                placeholder="Enter author's surname (e.g., Winston, Schulkins)"
+              />
+            </div>
+
+            <div class="form-group" id="editionGroup" style="display: none">
+              <label for="edition">Edition (if 2nd edition or above):</label>
+              <select id="edition" name="edition">
+                <option value="">First edition</option>
+                <option value="2">2nd edition</option>
+                <option value="3">3rd edition</option>
+                <option value="4">4th edition</option>
+                <option value="5">5th edition</option>
+                <option value="6">6th edition</option>
+                <option value="7">7th edition</option>
+                <option value="8">8th edition</option>
+                <option value="9">9th edition</option>
+                <option value="10">10th edition</option>
+              </select>
+            </div>
+
+            <div
+              class="form-group"
+              id="literatureWorkTypeGroup"
+              style="display: none"
+            >
+              <label for="literatureWorkType">Type of Work:</label>
+              <select id="literatureWorkType" name="literatureWorkType">
+                <option value="">Select work type...</option>
+                <option value="specific-title">
+                  Specific Title by an Author
+                </option>
+                <option value="biography-criticism">
+                  Biography or Criticism of an Author
+                </option>
+                <option value="autobiography-literary">
+                  Autobiography of a Literary Person
+                </option>
+                <option value="autobiography-nonliterary">
+                  Autobiography of a Non-Literary Person
+                </option>
+                <option value="collected-essays">
+                  Collected Essays/Prose/Interviews
+                </option>
+                <option value="collected-poems">Collected Poems</option>
+                <option value="collected-novels">
+                  Collected Novels/Stories
+                </option>
+                <option value="collected-plays">Collected Plays</option>
+                <option value="correspondence">
+                  Correspondence/Journals/Diaries
+                </option>
+                <option value="selected-works">
+                  Selected Works (Plays/Novels/Poems)
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group" id="titleGroup" style="display: none">
+              <label for="titleName">Title:</label>
+              <input
+                type="text"
+                id="titleName"
+                name="titleName"
+                placeholder="Enter title (e.g., The Grapes of Wrath, Company: a chosen life)"
+              />
+            </div>
+
+            <div class="form-group" id="editorGroup" style="display: none">
+              <label for="editorName"
+                >Editor/Author of Work (if applicable):</label
+              >
+              <input
+                type="text"
+                id="editorName"
+                name="editorName"
+                placeholder="Enter editor's surname (e.g., Squires, Heuser)"
+              />
+            </div>
+
+            <div
+              class="form-group"
+              id="publicationYearGroup"
+              style="display: none"
+            >
+              <label for="publicationYear"
+                >Publication Year (if no editor available):</label
+              >
+              <input
+                type="number"
+                id="publicationYear"
+                name="publicationYear"
+                placeholder="Enter year (e.g., 2011, 1957)"
+                min="1400"
+                max="2100"
+              />
+            </div>
+
+            <button type="submit" class="search-btn" id="submitBtn">
+              Generate Cutter Number
+            </button>
+          </form>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+          <div id="resultContent"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/javascript.js"></script>
+  </body>
+</html>

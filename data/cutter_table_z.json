@@ -1,0 +1,11 @@
+[
+  { "cutter": 11, "name": "Za", "group": "Z" },
+  { "cutter": 21, "name": "Zai", "group": "Z" },
+  { "cutter": 31, "name": "Zani", "group": "Z" },
+  { "cutter": 41, "name": "Ze", "group": "Z" },
+  { "cutter": 51, "name": "Zell", "group": "Z" },
+  { "cutter": 61, "name": "Zet", "group": "Z" },
+  { "cutter": 71, "name": "Zim", "group": "Z" },
+  { "cutter": 81, "name": "Zir", "group": "Z" },
+  { "cutter": 91, "name": "Zou", "group": "Z" }
+]
